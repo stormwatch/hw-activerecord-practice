@@ -1,8 +1,8 @@
 source 'https://rubygems.org'
 
-ruby '~> 2.0'
+ruby '2.6.6'
 
-gem 'activerecord', '~> 4.2'
+gem 'activerecord', '4.2.11'
 gem 'byebug'
 gem 'sqlite3', '1.3.11'
 gem 'rspec', '~> 3.0'
