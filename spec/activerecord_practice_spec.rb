@@ -42,7 +42,7 @@ describe 'ActiveRecord practice' do
       specify 'with valid email (email addr contains "@") (HINT: look up SQL LIKE operator)' do
         check Customer.with_valid_email, [1,2,4,5,7,8,10,11,12,13,14,15,17,18,19,20,23,26,29,30]
       end
-      xspecify 'with .org emails' do
+      specify 'with .org emails' do
         check Customer.with_dot_org_email, [5,7,8,12,23,26,29] 
       end
       xspecify 'with invalid but nonblank email (does not contain "@")' do
