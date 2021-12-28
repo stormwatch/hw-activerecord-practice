@@ -45,7 +45,7 @@ describe 'ActiveRecord practice' do
       specify 'with .org emails' do
         check Customer.with_dot_org_email, [5,7,8,12,23,26,29] 
       end
-      xspecify 'with invalid but nonblank email (does not contain "@")' do
+      specify 'with invalid but nonblank email (does not contain "@")' do
         check Customer.with_invalid_email, [3,6,9,16,22,25,27,28] 
       end
       xspecify 'with blank email' do

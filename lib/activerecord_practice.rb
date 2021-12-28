@@ -26,4 +26,8 @@ class Customer < ActiveRecord::Base
   def self.with_dot_org_email
     where 'email LIKE ?', '%.org'
   end
+
+  def self.with_invalid_email
+    where 'email NOT LIKE ?', '%@%'
+  end
 end
