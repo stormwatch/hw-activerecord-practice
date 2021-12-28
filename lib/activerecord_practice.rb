@@ -34,4 +34,8 @@ class Customer < ActiveRecord::Base
   def self.with_blank_email
     where email: nil
   end
+
+  def self.born_before_1980
+    where 'birthdate < ?', '1980-01-01'
+  end
 end

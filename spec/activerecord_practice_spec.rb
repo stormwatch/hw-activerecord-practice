@@ -51,7 +51,7 @@ describe 'ActiveRecord practice' do
       specify 'with blank email' do
         check  Customer.with_blank_email, [21,24]
       end
-      xspecify 'born before 1 Jan 1980' do
+      specify 'born before 1 Jan 1980' do
         check Customer.born_before_1980, [3,8,9,11,15,16,17,19,20,24,25,27]
       end
       xspecify 'with valid email AND born before 1/1/1980' do
