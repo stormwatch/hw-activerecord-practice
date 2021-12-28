@@ -17,8 +17,10 @@ class Customer < ActiveRecord::Base
     # probably something like:  Customer.where(....)
     where first: 'Candice'
   end
+
   def self.with_valid_email
     # YOUR CODE HERE to return only customers with valid email addresses (containing '@')
+    where 'email LIKE ?', '%@%'
   end
   # etc. - see README.md for more details
 end
