@@ -11,10 +11,11 @@ class Customer < ActiveRecord::Base
 
   #  NOTE: Every one of these can be solved entirely by ActiveRecord calls.
   #  You should NOT need to call Ruby library functions for sorting, filtering, etc.
-  
+
   def self.any_candice
     # YOUR CODE HERE to return all customer(s) whose first name is Candice
     # probably something like:  Customer.where(....)
+    where first: 'Candice'
   end
   def self.with_valid_email
     # YOUR CODE HERE to return only customers with valid email addresses (containing '@')
