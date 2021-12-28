@@ -43,12 +43,12 @@ describe 'ActiveRecord practice' do
         check Customer.with_valid_email, [1,2,4,5,7,8,10,11,12,13,14,15,17,18,19,20,23,26,29,30]
       end
       specify 'with .org emails' do
-        check Customer.with_dot_org_email, [5,7,8,12,23,26,29] 
+        check Customer.with_dot_org_email, [5,7,8,12,23,26,29]
       end
       specify 'with invalid but nonblank email (does not contain "@")' do
-        check Customer.with_invalid_email, [3,6,9,16,22,25,27,28] 
+        check Customer.with_invalid_email, [3,6,9,16,22,25,27,28]
       end
-      xspecify 'with blank email' do
+      specify 'with blank email' do
         check  Customer.with_blank_email, [21,24]
       end
       xspecify 'born before 1 Jan 1980' do
