@@ -63,4 +63,8 @@ class Customer < ActiveRecord::Base
     find_by(first: 'Gussie', last: 'Murray')
       .update birthdate: Time.parse('2004-02-08')
   end
+
+  def self.change_all_invalid_emails_to_blank
+    with_invalid_email.update_all email: ''
+  end
 end
