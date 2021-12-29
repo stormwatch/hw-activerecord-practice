@@ -67,4 +67,8 @@ class Customer < ActiveRecord::Base
   def self.change_all_invalid_emails_to_blank
     with_invalid_email.update_all email: ''
   end
+
+  def self.delete_meggie_herman
+    find_by(first: 'Meggie', last: 'Herman').destroy
+  end
 end
