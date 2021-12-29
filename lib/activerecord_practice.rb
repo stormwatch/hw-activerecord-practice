@@ -54,4 +54,8 @@ class Customer < ActiveRecord::Base
   def self.last_names_starting_with_b
     where('last LIKE ?', 'B%').order(:birthdate)
   end
+
+  def self.twenty_youngest
+    order(birthdate: :desc).limit 20
+  end
 end

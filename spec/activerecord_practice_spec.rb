@@ -62,7 +62,7 @@ describe 'ActiveRecord practice' do
       end
     end
     describe 'without needing .where' do
-      xspecify '20 youngest customers, in any order (hint: lookup ActiveRecord `order` and `limit`)' do
+      specify '20 youngest customers, in any order (hint: lookup ActiveRecord `order` and `limit`)' do
         check Customer.twenty_youngest, [7,5,6,30,1,10,29,21,18,13,14,28,26,4,2,22,23,12,11,9] 
       end
     end
