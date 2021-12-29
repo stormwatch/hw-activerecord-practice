@@ -63,7 +63,7 @@ describe 'ActiveRecord practice' do
     end
     describe 'without needing .where' do
       specify '20 youngest customers, in any order (hint: lookup ActiveRecord `order` and `limit`)' do
-        check Customer.twenty_youngest, [7,5,6,30,1,10,29,21,18,13,14,28,26,4,2,22,23,12,11,9] 
+        check Customer.twenty_youngest, [7,5,6,30,1,10,29,21,18,13,14,28,26,4,2,22,23,12,11,9]
       end
     end
   end
@@ -71,7 +71,7 @@ describe 'ActiveRecord practice' do
     before(:each) do
       expect(Customer).not_to receive(:find)
     end
-    xspecify 'the birthdate of Gussie Murray to February 8,2004 (HINT: lookup `Time.parse`)' do
+    specify 'the birthdate of Gussie Murray to February 8,2004 (HINT: lookup `Time.parse`)' do
       Customer.update_gussie_murray_birthdate
       expect(Customer.find_by(:first => 'Gussie').birthdate.to_date).to eq(Date.new 2004,2,8)
     end

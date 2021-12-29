@@ -58,4 +58,9 @@ class Customer < ActiveRecord::Base
   def self.twenty_youngest
     order(birthdate: :desc).limit 20
   end
+
+  def self.update_gussie_murray_birthdate
+    find_by(first: 'Gussie', last: 'Murray')
+      .update birthdate: Time.parse('2004-02-08')
+  end
 end
