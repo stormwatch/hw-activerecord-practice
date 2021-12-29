@@ -38,4 +38,16 @@ class Customer < ActiveRecord::Base
   def self.born_before_1980
     where 'birthdate < ?', '1980-01-01'
   end
+
+  def self.with_valid_email_and_born_before_1980
+    #This would work if it were not for the requisite of using ‘one or more calls to ActiveRecord's “where()”’
+    # born_before_1980.with_valid_email
+
+    # An example chaining calls to where would also work:
+    # where('birthdate < ?', '1980-01-01').where('email LIKE ?', '%@%')
+
+    # So Finally, I chose this, which works but disappoints everybody while
+    # trying to please everybody:
+    born_before_1980.where('email LIKE ?', '%@%')
+  end
 end
