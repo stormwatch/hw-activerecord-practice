@@ -50,4 +50,8 @@ class Customer < ActiveRecord::Base
     # trying to please everybody:
     born_before_1980.where('email LIKE ?', '%@%')
   end
+
+  def self.last_names_starting_with_b
+    where('last LIKE ?', 'B%').order(:birthdate)
+  end
 end

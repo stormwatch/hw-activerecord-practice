@@ -57,7 +57,7 @@ describe 'ActiveRecord practice' do
       specify 'with valid email AND born before 1/1/1980' do
         check Customer.with_valid_email_and_born_before_1980, [8,11,15,17,19,20]
       end
-      xspecify 'with last names starting with "B", sorted by birthdate' do
+      specify 'with last names starting with "B", sorted by birthdate' do
         expect(Customer.last_names_starting_with_b.map(&:id)).to eq( [25,23,4,28,18,21,29,1] )
       end
     end
