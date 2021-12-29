@@ -83,7 +83,7 @@ describe 'ActiveRecord practice' do
       Customer.delete_meggie_herman
       expect(Customer.find_by(:first => 'Meggie', :last => 'Herman')).to be_nil
     end
-    xspecify 'database by deleting all customers born on or before 31 Dec 1977' do
+    specify 'database by deleting all customers born on or before 31 Dec 1977' do
       Customer.delete_everyone_born_before_1978
       expect(Customer.where('birthdate < ?', Time.parse("1 January 1978"))).to be_empty
     end
